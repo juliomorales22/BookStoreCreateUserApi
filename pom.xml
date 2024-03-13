@@ -12,7 +12,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <junit.version>5.9.3</junit.version>
     <aspectj.version>1.9.19</aspectj.version>
-    <allure.version>2.22.0</allure.version>
+    <allure.version>2.25.0</allure.version>
     <org.testng.version>7.7.0</org.testng.version>
     <com.codeborne.version>6.13.1</com.codeborne.version>
     <io.github.bonigarcia.version>5.4.1</io.github.bonigarcia.version>
@@ -23,18 +23,46 @@
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <org.apache.maven.plugins.version>3.11.0</org.apache.maven.plugins.version>
-
-    <rest-assured.version>5.3.2</rest-assured.version>
+    <junit.version>5.10.1</junit.version>
+    <rest-assured.version>5.4.0</rest-assured.version>
     <gson.version>2.10.1</gson.version>
-
-
+   <lombok.version>1.18.30</lombok.version>
+    <allure.version>2.25.0</allure.version>
   </properties>
+    <dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-bom</artifactId>
+          <version>${allure.version}</version>
+
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+
   <dependencies>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${rest-assured.version}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-junit5</artifactId>
       <version>${allure.version}</version>
-      <scope>test</scope>
+
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.30</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>
@@ -45,50 +73,47 @@
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
       <version>${com.codeborne.version}</version>
-      <scope>test</scope>
+
     </dependency>
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-selenide</artifactId>
       <version>${allure.version}</version>
-      <scope>test</scope>
+
     </dependency>
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
       <version>${io.github.bonigarcia.version}</version>
-      <scope>test</scope>
+
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>${slf4j-api.version}</version>
     </dependency>
-
-
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>
-      <scope>test</scope>
+
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
-      <scope>test</scope>
+
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>${slf4j-api.version}</version>
-      <scope>test</scope>
+
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <version>${org.assertj.version}</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -105,7 +130,12 @@
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <version>${rest-assured.version}</version>
-      <scope>test</scope>
+
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-rest-assured</artifactId>
+      <version>2.25.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
