@@ -7,12 +7,15 @@ import org.example.UserDTO;
 import io.restassured.response.Response;
 
 public class UserService {
-
   public Response createUser(UserDTO user) {
     return given(getRequestSpecification()).
         body(user).post();
   }
-
+  public int createUserStatus(UserDTO user) {
+    return given(getRequestSpecification()).
+        body(user).post().
+        statusCode();
+  }
    /*public Response readUser(UserDTO user) {
    return given(getRequestSpecification()).
         pathParam("username", user.getUsername()).
